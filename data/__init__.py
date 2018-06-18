@@ -20,6 +20,16 @@ def CreateDataset(opt):
     elif opt.dataset_mode == 'single':
         from data.single_dataset import SingleDataset
         dataset = SingleDataset()
+    elif opt.dataset_mode == 'unaligned_A_labeled':
+        from data.unaligned_A_labeled_dataset import UnalignedALabeledDataset
+        dataset = UnalignedALabeledDataset()
+    elif opt.dataset_mode == 'mnist_svhn':
+        from data.mnist_svhn_dataset import MnistSvhnDataset
+        dataset = MnistSvhnDataset()
+    elif opt.dataset_mode == 'svhn_mnist':
+        from data.svhn_mnist_dataset import SvhnMnistDataset
+        dataset = SvhnMnistDataset()
+  
     else:
         raise ValueError("Dataset [%s] not recognized." % opt.dataset_mode)
 

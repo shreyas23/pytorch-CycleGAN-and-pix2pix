@@ -4,8 +4,7 @@ else
     how_many=50
 fi
 
-model=cycada_equalLoss_svhn2mnist_noIdentity_2GA
-#model=cycada_equalLoss_svhn2mnist
+model=cycada_svhn2mnist_noIdentity
 epoch=75
 CUDA_VISIBLE_DEVICES=0 python test.py --name ${model} \
     --resize_or_crop=None \
